@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--https://www.materialpalette.com/-->
+<resources>
+    <color name="colorPrimary">#f7de08</color>
+    <color name="colorPrimaryDark">#cdbb27</color>
+    <color name="colorAccent">#222222</color>
+    <color name="background_material_light">#1a1a1a</color>
+    <color name="background_material_dark">#242424</color>
+</resources>

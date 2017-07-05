@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_authentication"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+
+        app:srcCompat="@mipmap/ic_launcher_round"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="27dp"/>
+
+    <EditText
+
+        android:id="@+id/repeat_pass"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="250dp"
+
+        android:layout_height="50dp"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:textSize="19dp"
+        android:layout_below="@+id/name"
+        android:layout_alignLeft="@+id/name"
+        android:layout_alignStart="@+id/name"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:allowUndo="false"
+        android:elevation="1dp"
+        android:text="Регистрация"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="36sp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+
+        android:layout_marginTop="11dp"
+        android:hint="E-mail"
+        android:textSize="19dp"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/name"
+        android:layout_alignLeft="@+id/et_email"
+        android:layout_alignStart="@+id/et_email"
+        android:layout_below="@+id/et_email"
+        android:hint="Имя"
+        android:inputType="textPassword"
+        android:textSize="19dp"/>
+    <EditText
+
+        style="@style/Widget.AppCompat.Light.AutoCompleteTextView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/et_password"
+        android:hint="Повторите пароль"
+        android:inputType="textPassword"
+        android:textSize="19dp"
+
+        android:layout_below="@+id/repeat_pass"
+        android:layout_alignLeft="@+id/repeat_pass"
+        android:layout_alignStart="@+id/repeat_pass"/>
+
+    <Button
+        android:id="@+id/btn_sign_in"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/repeat_pass"
+        android:layout_alignStart="@+id/repeat_pass"
+        android:layout_below="@+id/et_password"
+        android:text="Регистрация"
+        android:textColor="@android:color/black"/>
+
+</RelativeLayout>

@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--https://www.materialpalette.com/-->
 <resources>
-    <color name="colorPrimary">#f7de08</color>
-    <color name="colorPrimaryDark">#cdbb27</color>
-    <color name="colorAccent">#222222</color>
     <color name="background_material_light">#1a1a1a</color>
     <color name="background_material_dark">#242424</color>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#880E4F</color>
+
+    <color name="first_slide_background">#e91e63</color>
+    <color name="first_slide_buttons">#880E4F</color>
+
+    <color name="second_slide_background">#9C27B0</color>
+    <color name="second_slide_buttons">#4a148c</color>
+
+    <color name="third_slide_background">#009688</color>
+    <color name="third_slide_buttons">#004D40</color>
+
+    <color name="fourth_slide_background">#795548</color>
+    <color name="fourth_slide_buttons">#3E2723</color>
+
+    <color name="custom_slide_background">#3F51B5</color>
+    <color name="custom_slide_buttons">#1a237e</color>
+
+    <!--Splash Screen-->
+    <item name="splash_background" type="color">@color/colorPrimary</item>
 </resources>

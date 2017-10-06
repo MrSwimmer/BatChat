@@ -1,13 +1,13 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import android.os.AsyncTask;
 import android.util.Log;
 
 
-import com.batchat.batchat.Realm.VacancysSkills;
-import com.batchat.batchat.hh.APIService;
-import com.batchat.batchat.hh.GETPage.PageV;
-import com.batchat.batchat.hh.GETVacancy.Vacancy;
+import com.batchat.compassIT.Realm.VacancysSkills;
+import com.batchat.compassIT.hh.APIService;
+import com.batchat.compassIT.hh.GETPage.PageV;
+import com.batchat.compassIT.hh.GETVacancy.Vacancy;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import static com.batchat.batchat.SplashActivity.mRealm;
+import static com.batchat.compassIT.SplashActivity.mRealm;
 
 
 /**
@@ -85,15 +85,6 @@ public class SearchID extends AsyncTask<String, Integer, Void> {
                                         Log.i("code", "err " + e);
                                     }
                                     mRealm.commitTransaction();
-//                                    percent = (float) (2* finalI);
-//                                    final String Percent = String.valueOf((int) percent);
-//                                    Handler handler = new Handler(Looper.getMainLooper());
-//                                    handler.post( new Runnable() {
-//                                        @Override
-//                                        public void run() {
-//                                            txt_percentage.setText(Percent);
-//                                        }
-//                                    } );
                                 }
 
                                 @Override

@@ -1,4 +1,4 @@
-package com.batchat.batchat.hh.GETVacancy;
+package com.batchat.compassIT.hh.GETVacancy;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

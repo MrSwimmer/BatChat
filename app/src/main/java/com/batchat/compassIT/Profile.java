@@ -1,4 +1,4 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -15,6 +15,7 @@ public class Profile extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.profile, container, false);
+
         return v;
     }
 }

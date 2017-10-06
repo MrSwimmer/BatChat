@@ -1,4 +1,4 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import android.app.Activity;
 import android.content.res.AssetManager;
@@ -8,8 +8,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 
-import com.batchat.batchat.Realm.VacancysSkills;
-import com.batchat.batchat.hh.APIService;
+import com.batchat.compassIT.Realm.VacancysSkills;
+import com.batchat.compassIT.hh.APIService;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -32,6 +32,7 @@ public class SplashActivity extends Activity {
     public static TextView txt_percentage;
     public static String allStack;
     private String PopularStack;
+
     @Override
     protected void onStart() {
         super.onStart();

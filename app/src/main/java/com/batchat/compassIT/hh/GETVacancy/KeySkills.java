@@ -1,4 +1,4 @@
-package com.batchat.batchat.hh.GETVacancy;
+package com.batchat.compassIT.hh.GETVacancy;
 
 /**
  * Created by Севастьян on 01.10.2017.

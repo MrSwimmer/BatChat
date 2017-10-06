@@ -1,4 +1,4 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import android.app.Activity;
 import android.content.Intent;

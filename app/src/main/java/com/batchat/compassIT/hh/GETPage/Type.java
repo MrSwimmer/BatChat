@@ -1,13 +1,14 @@
-package com.batchat.batchat.hh.GETVacancy;
+package com.batchat.compassIT.hh.GETPage;
+
+/**
+ * Created by Севастьян on 29.09.2017.
+ */
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by Севастьян on 27.09.2017.
- */
+public class Type {
 
-public class Experience {
     @SerializedName("id")
     @Expose
     private String id;

@@ -1,11 +1,11 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.app.TaskStackBuilder;
 
-import com.batchat.batchat.Intro.FirstStartActivity;
+import com.batchat.compassIT.Intro.FirstStartActivity;
 
 
 public class Splash extends Activity {

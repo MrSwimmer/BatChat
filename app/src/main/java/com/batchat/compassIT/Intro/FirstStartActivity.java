@@ -1,4 +1,4 @@
-package com.batchat.batchat.Intro;
+package com.batchat.compassIT.Intro;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,7 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 
-import com.batchat.batchat.R;
+import com.batchat.compassIT.R;
 
 import agency.tango.materialintroscreen.MaterialIntroActivity;
 import agency.tango.materialintroscreen.SlideFragmentBuilder;

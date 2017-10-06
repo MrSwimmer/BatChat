@@ -1,8 +1,8 @@
-package com.batchat.batchat.hh;
+package com.batchat.compassIT.hh;
 
 
-import com.batchat.batchat.hh.GETPage.PageV;
-import com.batchat.batchat.hh.GETVacancy.Vacancy;
+import com.batchat.compassIT.hh.GETPage.PageV;
+import com.batchat.compassIT.hh.GETVacancy.Vacancy;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

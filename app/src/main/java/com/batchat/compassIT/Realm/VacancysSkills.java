@@ -1,4 +1,4 @@
-package com.batchat.batchat.Realm;
+package com.batchat.compassIT.Realm;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Required;

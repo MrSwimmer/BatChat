@@ -1,4 +1,4 @@
-package com.batchat.batchat;
+package com.batchat.compassIT;
 
 import java.util.Comparator;
 

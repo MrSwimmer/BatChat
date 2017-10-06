@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.batchat.batchat">
+          package="com.batchat.compassIT">
 
     <application
         android:allowBackup="true"
@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Splash">
+        <activity android:name="com.batchat.compassIT.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Intro.FirstStartActivity"/>
-        <activity android:name=".ChooseProfession"/>
-        <activity android:name=".ChooseProger"/>
-        <activity android:name=".DrawerActivity"
+        <activity android:name="com.batchat.compassIT.Intro.FirstStartActivity"/>
+        <activity android:name="com.batchat.compassIT.ChooseProfession"/>
+        <activity android:name="com.batchat.compassIT.ChooseProger"/>
+        <activity android:name="com.batchat.compassIT.DrawerActivity"
                   android:theme="@style/Theme.Intro"></activity>
     </application>
 

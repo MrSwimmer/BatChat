@@ -38,8 +38,8 @@ public class DrawerActivity extends AppCompatActivity
 
     private APIService service;
     List<Skill> masskills = new ArrayList<Skill>();
-    public static ArrayList<String> stackskills = new ArrayList<String >();
-    public static Realm mRealm;
+    ArrayList<String> stackskills = new ArrayList<String >();
+    //public static Realm mRealm;
     public static String allStack;
     private String PopularStack;
 
@@ -47,21 +47,12 @@ public class DrawerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-        mRealm = Realm.getInstance(this);
 
         //получаем ключи. тут 0-имя для поиска, 1-название для файла и ключ для поиска, 2-ключ для поиска
         Bundle bundle = getIntent().getExtras();
         String extramas[] = bundle.getStringArray("keys");
 
-        //парсим стек технологий по профессии из файла 1 в stackskills
-        String text = extramas[1]+".txt";
-        ParseStackFromFile(text);
-
-        //запускаем асинк
-        SearchIDandV searchID = new SearchIDandV();
-        searchID.execute(extramas);
-
-
+        LoaderBase loaderBase = new LoaderBase(extramas);
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -145,80 +136,5 @@ public class DrawerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-    void ParseStackFromFile(String text){
-        AssetManager am = this.getAssets();
-        InputStream is = null;
-        try {
-            is = am.open(text);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BufferedReader r = new BufferedReader(new InputStreamReader(is));
-        StringBuilder total = new StringBuilder();
-        String line;
-        try {
-            while ((line = r.readLine()) != null) {
-                total.append(line).append('\n');
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        allStack = total.toString();
-        int pos=0;
-        for(int i=0; i<allStack.length(); i++){
-            if(allStack.charAt(i)==','){
-                stackskills.add(allStack.substring(pos, i));
-                pos=i+1;
-            }
-        }
-    }
-    public void ReadBase(String[] maskeys){
-        mRealm.beginTransaction();
-        RealmResults<VacancysSkills> stacks = mRealm.allObjects(VacancysSkills.class);
-        if(!stacks.isEmpty()) {
-            for(int i = stacks.size() - 1; i >= 0; i--) {
-
-                String skills = stacks.get(i).getSkills();
-                String area = stacks.get(i).getArea();
-                int pos=0;
-                //Строка стека в виде Скилл,Скилл,
-                for(int k=0; k<skills.length();k++){
-                    if(skills.charAt(k)==','){
-                        String sub = skills.substring(pos,k).toLowerCase();
-                        boolean meet = false;
-                        for(int p=0; p<masskills.size(); p++){
-                            //Log.i("code", masskills.get(p).getSkill()+" "+ sub);
-                            //Если нашли, то плюсуем
-                            if(masskills.get(p).getSkill().equals(sub)){
-                                masskills.get(p).addCount();
-                                meet = true;
-                                break;
-                            }
-                            else {
-
-                            }
-                        }
-                        if(!meet){
-                            Skill skill = new Skill();
-                            skill.setSkill(sub);
-                            skill.addCount();
-                            //если такого еще не было, то добавляем в Arraylist
-                            masskills.add(skill);
-                        }
-                        pos=k+1;
-                    }
-                }
-            }
-
-            //сортируем полученный ArrayList
-            Collections.sort(masskills, Skill.COMPARE_BY_COUNT);
-            for(int p=0; p<masskills.size(); p++){
-                Log.i("code", "s: "+masskills.get(p).getSkill()+ " c: "+masskills.get(p).getCount());
-                PopularStack+=masskills.get(p).getSkill()+",";
-            }
-            Log.i("code", PopularStack);
-        }
-        mRealm.commitTransaction();
     }
 }

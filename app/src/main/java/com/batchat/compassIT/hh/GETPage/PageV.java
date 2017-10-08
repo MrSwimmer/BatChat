@@ -16,7 +16,17 @@ public class PageV {
     @SerializedName("page")
     @Expose
     private Integer page;
+    @SerializedName("found")
+    @Expose
+    private Integer found;
 
+    public Integer getFound() {
+        return found;
+    }
+
+    public void setFound(Integer found) {
+        this.found = found;
+    }
     public List<Item> getItems() {
         return items;
     }

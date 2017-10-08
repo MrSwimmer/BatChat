@@ -12,7 +12,10 @@ class Skill {
 
     public Skill() {
     }
-
+    public Skill(String newskill){
+        this.skill=newskill;
+        this.addCount();
+    }
     public String getSkill() {
         return skill;
     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--https://www.materialpalette.com/-->
 <resources>
-    <color name="background_material_light">#1a1a1a</color>
-    <color name="background_material_dark">#242424</color>
-    <color name="colorPrimary">#3f51b5</color>
-    <color name="colorPrimaryDark">#303f9f</color>
-    <color name="colorAccent">#880E4F</color>
+    <color name="background_material_light">#ffffff</color>
+    <color name="background_material_dark">#ffffff</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#c21a1a</color>
+    <color name="colorAccent">#3014cc</color>
 
     <color name="first_slide_background">#e91e63</color>
     <color name="first_slide_buttons">#880E4F</color>

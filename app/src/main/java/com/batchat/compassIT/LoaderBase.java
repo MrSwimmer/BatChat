@@ -1,10 +1,13 @@
 package com.batchat.compassIT;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.batchat.compassIT.hh.APIService;
 import com.batchat.compassIT.hh.GETPage.PageV;
 import com.batchat.compassIT.hh.GETVacancy.Vacancy;
+import com.mikhaellopez.circularfillableloaders.CircularFillableLoaders;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class LoaderBase {
     private final APIService service;
     List<Skill> masskills;
-    int count=0;
+    float percent, progress=0;
+
+    float count=0;
     public LoaderBase(final String[] params) {
 
 
@@ -37,6 +42,9 @@ public class LoaderBase {
             public void onResponse(Call<PageV> call, Response<PageV> response) {
                 PageV page = response.body();
                 count=(page.getFound()/20)-1;
+                count=Math.min(count,99);
+                percent = 100/(count*20);
+
                 GetIDthenVacancy(params);
             }
 
@@ -48,16 +56,24 @@ public class LoaderBase {
 
     }
     void GetIDthenVacancy(final String[] params){
+        MainApplication.getInstance().CountSkillsFront.clear();
         for(int i=1; i<count; i++){
 
             Call<PageV> call = service.getListURL(params[0], i);
             final int finalI1 = i;
+            final int finalI = i;
             call.enqueue(new Callback<PageV>() {
                 @Override
                 public void onResponse(Call<PageV> call, Response<PageV> response) {
                     PageV page = response.body();
                     for(int j=0; j<20; j++) {
-
+                        try {
+                            String buf = page.getItems().get(j).getId();
+                        }
+                        catch (Exception e){
+                            Log.i("code", finalI +" "+j);
+                            return;
+                        }
                         String buf = page.getItems().get(j).getId();
                         String toLow = page.getItems().get(j).getName().toLowerCase();
 
@@ -70,6 +86,15 @@ public class LoaderBase {
                                     if( finalJ ==19&& finalI1 ==count-1){
                                         Log.i("code", "OK");
                                     }
+                                    Handler handler = new Handler(Looper.getMainLooper());
+                                    handler.post( new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            progress+=percent;
+                                            String buf = String.valueOf(progress);
+                                            Profile.setProgress(progress);
+                                        }
+                                    } );
                                     String description = response.body().getDescription();
                                     ArrayList<String> arrayList = MainApplication.getInstance().FrontStackSkills;
                                     for(int k=0; k<arrayList.size(); k++){

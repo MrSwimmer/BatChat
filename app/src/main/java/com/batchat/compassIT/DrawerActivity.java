@@ -1,6 +1,7 @@
 package com.batchat.compassIT;
 
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 
 import com.batchat.compassIT.Realm.VacancysSkills;
 import com.batchat.compassIT.hh.APIService;
+import com.mikhaellopez.circularfillableloaders.CircularFillableLoaders;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -36,12 +38,6 @@ import io.realm.RealmResults;
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private APIService service;
-    List<Skill> masskills = new ArrayList<Skill>();
-    ArrayList<String> stackskills = new ArrayList<String >();
-    //public static Realm mRealm;
-    public static String allStack;
-    private String PopularStack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +50,17 @@ public class DrawerActivity extends AppCompatActivity
 
         LoaderBase loaderBase = new LoaderBase(extramas);
 
+        Fragment fragment = null;
+        Class fragmentClass = null;
+        fragmentClass = Profile.class;
+        try{
+            fragment = (Fragment) fragmentClass.newInstance();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 

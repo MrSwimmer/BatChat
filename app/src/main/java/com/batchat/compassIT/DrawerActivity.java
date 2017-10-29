@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -38,17 +39,10 @@ import io.realm.RealmResults;
 public class DrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
-
-        //получаем ключи. тут 0-имя для поиска, 1-название для файла и ключ для поиска, 2-ключ для поиска
-        Bundle bundle = getIntent().getExtras();
-        String extramas[] = bundle.getStringArray("keys");
-
-        LoaderBase loaderBase = new LoaderBase(extramas);
 
         Fragment fragment = null;
         Class fragmentClass = null;

@@ -32,7 +32,7 @@ public class ChooseProger extends Activity{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(ChooseProger.this, DrawerActivity.class);
-                maskeys = new String[]{"frontend разработчик", "frontend", "developer"};
+                maskeys = new String[]{"Frontend разработчик", "frontend", "developer"};
                 intent.putExtra("keys",maskeys);
                 startActivity(intent);
             }

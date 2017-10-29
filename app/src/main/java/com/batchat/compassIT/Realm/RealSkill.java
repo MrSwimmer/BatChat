@@ -1,4 +1,4 @@
-package com.batchat.compassIT;
+package com.batchat.compassIT.Realm;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Required;
@@ -7,20 +7,10 @@ import io.realm.annotations.Required;
  * Created by Севастьян on 12.10.2017.
  */
 
-public class Skill {
+public class RealSkill  extends RealmObject{
     @Required
     private String skill, area;
     private int count=0;
-
-    public Skill(String skill, String area) {
-        this.skill = skill;
-        this.area = area;
-        addCount();
-    }
-
-    public void addCount() {
-        this.count++;
-    }
 
     public String getSkill() {
         return skill;

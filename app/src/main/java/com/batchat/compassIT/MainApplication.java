@@ -1,6 +1,7 @@
 package com.batchat.compassIT;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.util.Log;
 
@@ -12,14 +13,19 @@ import java.util.ArrayList;
 
 import io.realm.Realm;
 
+
 /**
  * Created by Севастьян on 08.10.2017.
  */
 
 public class MainApplication extends Application {
+    private SharedPreferences mSettings;
+    public Realm mainRealm;
+    public static final String APP_PREFERENCES = "mysettings";
     private static MainApplication singleton;
     public ArrayList<String> FrontStackSkills=new ArrayList<String>(),
-            BackendStackSkills=new ArrayList<String>();
+            BackendStackSkills=new ArrayList<String>(),
+            LanguagesStack = new ArrayList<String>();
     public ArrayList<Skill> CountSkillsFront=new ArrayList<Skill>(), CountBackendSkills;
     // Возвращает экземпляр данного класса
     public static MainApplication getInstance() {
@@ -32,7 +38,9 @@ public class MainApplication extends Application {
         singleton = this;
         GetStacksFromFile(FrontStackSkills,"frontend.txt");
         GetStacksFromFile(BackendStackSkills, "backend.txt");
-
+        GetStacksFromFile(LanguagesStack, "languages.txt");
+        //mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        mainRealm = Realm.getInstance(this);
     }
     void GetStacksFromFile(ArrayList<String> StackSkills, String text){
         AssetManager am = this.getAssets();
@@ -53,7 +61,7 @@ public class MainApplication extends Application {
             e.printStackTrace();
         }
         String allStack = total.toString();
-        Log.i("code", allStack);
+        //Log.i("code", allStack);
         int pos=0;
         for(int i=0; i<allStack.length(); i++){
             if(allStack.charAt(i)==','){

@@ -21,10 +21,12 @@
         app:wlv_waveAmplitude="70"
         app:wlv_waveColor="@color/colorAccent"/>
     <LinearLayout
+        android:id="@+id/allinf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -33,6 +35,36 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             app:srcCompat="@mipmap/ic_launcher_round"/>
+        <devlight.io.library.ArcProgressStackView
+            android:id="@+id/apsv"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            app:apsv_animated="true"
+            app:apsv_animation_duration="1000"
+            app:apsv_dragged="true"
+            app:apsv_draw_width="75%"
+            app:apsv_indicator_orientation="vertical"
+            app:apsv_interpolator="@android:anim/bounce_interpolator"
+            app:apsv_leveled="true"
+            app:apsv_model_bg_enabled="true"
+            app:apsv_model_offset="5dp"
+            app:apsv_preview_bg="#ccc"
+            app:apsv_preview_colors="@array/default_preview"
+            app:apsv_rounded="true"
+            app:apsv_shadow_angle="90"
+            app:apsv_shadow_color="#000"
+            app:apsv_shadow_distance="5dp"
+            app:apsv_shadow_radius="10dp"
+            app:apsv_shadowed="true"
+            app:apsv_start_angle="270"
+            app:apsv_sweep_angle="360"
+            app:apsv_text_color="#fff"
+            app:apsv_typeface="fonts/agency.ttf"/>
+        <ListView
+            android:id="@+id/topfive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
     </LinearLayout>
 

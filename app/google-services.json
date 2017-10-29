@@ -1,35 +1,35 @@
 {
   "project_info": {
-    "project_number": "233847713175",
-    "firebase_url": "https://batchat-c816c.firebaseio.com",
-    "project_id": "batchat-c816c",
-    "storage_bucket": "batchat-c816c.appspot.com"
+    "project_number": "413098554440",
+    "firebase_url": "https://serverforcompass.firebaseio.com",
+    "project_id": "serverforcompass",
+    "storage_bucket": "serverforcompass.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:233847713175:android:7879edaa41a7915c",
+        "mobilesdk_app_id": "1:413098554440:android:ab00483fc3a22dac",
         "android_client_info": {
-          "package_name": "com.batchat.batchat"
+          "package_name": "com.serverforcompass"
         }
       },
       "oauth_client": [
         {
-          "client_id": "233847713175-7epoghu4vtlppoog7f9bcbjihc1k303b.apps.googleusercontent.com",
+          "client_id": "413098554440-j1bqhameg1ok47fm7fq69t2ganogmqa7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.batchat.batchat",
+            "package_name": "com.serverforcompass",
             "certificate_hash": "70522e94947bd5ffa67c11b1c811439826fbe45e"
           }
         },
         {
-          "client_id": "233847713175-4opqngn5h1565taq2s0bt606l1dhl48b.apps.googleusercontent.com",
+          "client_id": "413098554440-2t5qaj7ecah8mlhaj3v621ad1unnlcge.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCr5gYusHeTAORSKXPBckqmrSfsdoQVv7k"
+          "current_key": "AIzaSyDCWCi_iq6ieD-PBxTPB_qEbjtUyVFaznQ"
         }
       ],
       "services": {
@@ -40,10 +40,41 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "233847713175-4opqngn5h1565taq2s0bt606l1dhl48b.apps.googleusercontent.com",
+              "client_id": "413098554440-2t5qaj7ecah8mlhaj3v621ad1unnlcge.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413098554440:android:7879edaa41a7915c",
+        "android_client_info": {
+          "package_name": "com.batchat.batchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "413098554440-2t5qaj7ecah8mlhaj3v621ad1unnlcge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCWCi_iq6ieD-PBxTPB_qEbjtUyVFaznQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2

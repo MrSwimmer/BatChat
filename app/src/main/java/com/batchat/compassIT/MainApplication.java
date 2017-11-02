@@ -36,9 +36,9 @@ public class MainApplication extends Application {
     public final void onCreate() {
         super.onCreate();
         singleton = this;
-        GetStacksFromFile(FrontStackSkills,"frontend.txt");
+        /*GetStacksFromFile(FrontStackSkills,"frontend.txt");
         GetStacksFromFile(BackendStackSkills, "backend.txt");
-        GetStacksFromFile(LanguagesStack, "languages.txt");
+        GetStacksFromFile(LanguagesStack, "languages.txt");*/
         //mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         mainRealm = Realm.getInstance(this);
     }

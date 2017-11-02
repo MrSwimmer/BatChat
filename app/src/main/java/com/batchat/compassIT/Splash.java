@@ -18,8 +18,9 @@ public class Splash extends Activity {
         super.onStart();
         setContentView(R.layout.splash);
         mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
-        new LoadFromFire("frontend");
-        new Handler().postDelayed(new Runnable() {
+
+        new LoadFromFire();
+        /*new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 // По истечении времени, запускаем главный активити, а Splash Screen закрываем
@@ -30,6 +31,6 @@ public class Splash extends Activity {
                         .addNextIntent(new Intent(getApplicationContext(), FirstStartActivity.class))
                         .startActivities();
             }
-        }, 2000);
+        }, 2000);*/
     }
 }

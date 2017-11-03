@@ -1,9 +1,13 @@
 package com.batchat.compassIT;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
+import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 
+import com.batchat.compassIT.Intro.FirstStartActivity;
 import com.batchat.compassIT.Realm.RealSkill;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,7 +35,7 @@ public class LoadFromFire {
 
     LoadFromFire(){
         mStorageRef = FirebaseStorage.getInstance().getReference();
-        for(int i=0; i<8; i++){
+        for(int i=0; i<namesFiles.length; i++){
             final String name = namesFiles[i];
             StorageReference stacks = mStorageRef.child("countstack/"+name+".txt");
             File localFile = null;
@@ -73,8 +77,11 @@ public class LoadFromFire {
                                     realSkill.setCount(count);
                                     realSkill.setSkill(skill);
                                     MainApplication.getInstance().mainRealm.commitTransaction();
-                                    //new LoadToReal().execute(skill, String.valueOf(count), namesFiles[finalI]);
+
                                 }
+                            }
+                            if(finalI==namesFiles.length-1){
+
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

@@ -36,38 +36,6 @@ public class MainApplication extends Application {
     public final void onCreate() {
         super.onCreate();
         singleton = this;
-        /*GetStacksFromFile(FrontStackSkills,"frontend.txt");
-        GetStacksFromFile(BackendStackSkills, "backend.txt");*/
-        GetStacksFromFile(LanguagesStack, "languages.txt");
-        //mSettings = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         mainRealm = Realm.getInstance(this);
-    }
-    void GetStacksFromFile(ArrayList<String> StackSkills, String text){
-        AssetManager am = this.getAssets();
-        InputStream is = null;
-        try {
-            is = am.open(text);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BufferedReader r = new BufferedReader(new InputStreamReader(is));
-        StringBuilder total = new StringBuilder();
-        String line;
-        try {
-            while ((line = r.readLine()) != null) {
-                total.append(line).append('\n');
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        String allStack = total.toString();
-        //Log.i("code", allStack);
-        int pos=0;
-        for(int i=0; i<allStack.length(); i++){
-            if(allStack.charAt(i)==','){
-                StackSkills.add(allStack.substring(pos, i).toLowerCase());
-                pos=i+1;
-            }
-        }
     }
 }

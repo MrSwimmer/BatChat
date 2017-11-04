@@ -4,7 +4,7 @@
     <color name="background_material_light">#ffffff</color>
     <color name="background_material_dark">#ffffff</color>
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#c21a1a</color>
+    <color name="colorPrimaryDark">#3f51b5</color>
     <color name="colorAccent">#3014cc</color>
 
     <color name="first_slide_background">#e91e63</color>

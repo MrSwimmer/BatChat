@@ -23,8 +23,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-import static com.batchat.compassIT.Profile.context;
-
 /**
  * Created by Севастьян on 29.10.2017.
  */

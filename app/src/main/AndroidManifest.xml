@@ -10,8 +10,8 @@
         android:name=".MainApplication"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name="com.batchat.compassIT.Splash">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -22,7 +22,7 @@
                   android:theme="@style/Theme.Intro"/>
         <activity android:name="com.batchat.compassIT.ChooseProfession"/>
         <activity android:name="com.batchat.compassIT.ChooseProger"/>
-        <activity android:name="com.batchat.compassIT.DrawerActivity"></activity>
+        <activity android:name=".MainActivity"/>
     </application>
 
 </manifest>

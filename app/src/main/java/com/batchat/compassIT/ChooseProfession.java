@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 public class ChooseProfession extends Activity {
     LinearLayout Manager, Proger, UIUX, SysAdmin, Director, Writer, Unknow;
-    String Choice = "nothing";
+    int ChoiceId;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,7 @@ public class ChooseProfession extends Activity {
         Manager.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Choice = "manager";
+                ChoiceId = 0;
             }
         });
         Proger.setOnClickListener(new View.OnClickListener() {

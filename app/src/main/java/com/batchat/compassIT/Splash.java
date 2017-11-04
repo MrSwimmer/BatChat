@@ -23,13 +23,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-import static com.batchat.compassIT.Profile.context;
 
 
 public class Splash extends Activity {
     private SharedPreferences mSettings;
-    TextView bottomtext;
     public static final String APP_PREFERENCES = "mysettings";
+    TextView bottomtext;
     @Override
     protected void onStart() {
         super.onStart();
@@ -44,7 +43,7 @@ public class Splash extends Activity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent i = new Intent(Splash.this, DrawerActivity.class);
+                    Intent i = new Intent(Splash.this, MainActivity.class);
                     startActivity(i);
                 }
             }, 2000);
@@ -106,6 +105,7 @@ public class Splash extends Activity {
                                         .addNextIntentWithParentStack(new Intent(getApplicationContext(), ChooseProfession.class))
                                         .addNextIntent(new Intent(getApplicationContext(), FirstStartActivity.class))
                                         .startActivities();
+
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

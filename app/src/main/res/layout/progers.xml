@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/second_slide_buttons"
+    android:background="#423752"
     android:orientation="vertical">
 
     <TextView
@@ -16,7 +16,8 @@
         android:layout_marginBottom="18dp"
         android:text="Выберите профессию"
         android:textAlignment="center"
-        android:textSize="18sp"/>
+        android:textColor="@android:color/white"
+        android:textSize="20sp"/>
 
     <ScrollView
 
@@ -52,15 +53,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="Frontend"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,15 +75,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="Backend"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -96,14 +97,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="Mobile"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -118,14 +120,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="TextView"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -139,14 +142,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="TextView"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -160,14 +164,15 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="TextView"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
             </GridLayout>
@@ -189,7 +194,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
                         android:id="@+id/textView6"
@@ -197,7 +202,8 @@
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="TextView"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -211,49 +217,21 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_margin="10dp"
-                        app:srcCompat="@color/first_slide_background"/>
+                        app:srcCompat="@drawable/button_background"/>
 
                     <TextView
-                        android:id="@+id/textView6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="10dp"
                         android:text="TextView"
-                        android:textAlignment="center"/>
+                        android:textAlignment="center"
+                        android:textColor="@android:color/white"/>
                 </LinearLayout>
 
             </GridLayout>
 
         </LinearLayout>
     </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="15dp"
-            android:text="Button"/>
-
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:layout_margin="15dp"
-            android:text="Button"/>
-    </RelativeLayout>
 
 </RelativeLayout>
 

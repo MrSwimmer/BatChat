@@ -15,7 +15,6 @@ import java.util.Collections;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-import static com.batchat.compassIT.Profile.context;
 
 /**
  * Created by Севастьян on 10.10.2017.

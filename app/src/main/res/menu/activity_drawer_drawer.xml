@@ -3,25 +3,25 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_prof"
+            android:icon="@drawable/ic_prof"
             android:checked="true"
-            android:title="БэтПрофиль"/>
+            android:title="Профиль"/>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="БэтДрузья"/>
+            android:id="@+id/nav_stack"
+            android:icon="@drawable/ic_stack"
+            android:title="Стэк"/>
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="БэтДиалоги"/>
+            android:id="@+id/nav_rate"
+            android:icon="@drawable/ic_stat"
+            android:title="Рейтинги"/>
         <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="БэтБеседа"/>
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="Что тут происходит?"/>
     </group>
 
-    <item android:title="БэтНастройки">
+    <item android:title="Дополнительно">
         <menu>
             <item
                 android:id="@+id/nav_share"

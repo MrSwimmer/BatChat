@@ -3,6 +3,8 @@ package com.batchat.compassIT;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 import com.batchat.compassIT.Realm.RealSkill;
 
@@ -32,7 +34,9 @@ class PopStackView {
     private final Realm mRealm = MainApplication.getInstance().mainRealm;
     ArrayList<RealSkill> topLang = new ArrayList<RealSkill>();
     ArrayList<RealSkill> topSkill = new ArrayList<RealSkill>();
+
     public PopStackView(View view) {
+        final String[] bgColors = view.getResources().getStringArray(R.array.medical_express);
         topLang.clear();
         topSkill.clear();
         final String[] startColors = view.getResources().getStringArray(R.array.default_preview);
@@ -68,18 +72,26 @@ class PopStackView {
         });*/
         int allcount = 0;
         Collections.sort(topSkill, new MyComparator());
+        String[] names = new String[5];
         for(int i=0; i<5; i++){
+            int ip = i+1;
+            names[i]="#"+ip+" "+topSkill.get(i).getSkill();
             allcount += topSkill.get(i).getCount();
             Log.i("code", topSkill.get(i).getSkill());
         }
         for(int i=0; i<5; i++){
             RealSkill top5 = topSkill.get(i);
             Log.i("code", "top"+i+" "+top5.getSkill()+" "+top5.getCount());
-            models.add(new ArcProgressStackView.Model(top5.getSkill(), top5.getCount()*100/allcount, mStartColors[i]));
+            models.add(new ArcProgressStackView.Model(top5.getSkill(), top5.getCount()*100/allcount, Color.parseColor(bgColors[i]), mStartColors[i]));
         }
         Log.i("code", models.size()+"");
         final ArcProgressStackView arcProgressStackView = (ArcProgressStackView) view.findViewById(R.id.apsv);
         arcProgressStackView.setModels(models);
+        ListView listStack = (ListView) view.findViewById(R.id.stack_list);
+        // создаем адаптер
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.my_item, names);
+        // присваиваем адаптер списку
+        listStack.setAdapter(adapter);
     }
     class MyComparator implements Comparator<RealSkill> {
         @Override
@@ -88,6 +100,5 @@ class PopStackView {
             else if (o1.getCount()> o2.getCount()) return -1;
             else return 1;
         }
-
     }
 }

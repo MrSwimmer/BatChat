@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical"
               android:paddingLeft="15dp"
               android:paddingRight="15dp"
@@ -16,9 +17,9 @@
 
         <ImageView
             android:id="@+id/imageView5"
-            app:srcCompat="@drawable/button_background"
             android:layout_width="90dp"
-            android:layout_height="90dp"/>
+            android:layout_height="90dp"
+            app:srcCompat="@drawable/button_background"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -43,30 +44,55 @@
                 android:textSize="24sp"/>
         </LinearLayout>
     </LinearLayout>
-    <devlight.io.library.ArcProgressStackView
-        android:id="@+id/apsv"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:apsv_animated="true"
-        app:apsv_animation_duration="1000"
-        app:apsv_dragged="true"
-        app:apsv_draw_width="75%"
-        app:apsv_indicator_orientation="vertical"
-        app:apsv_interpolator="@android:anim/bounce_interpolator"
-        app:apsv_leveled="true"
-        app:apsv_model_bg_enabled="true"
-        app:apsv_model_offset="0dp"
-        app:apsv_preview_bg="#ccc"
-        app:apsv_preview_colors="@array/default_preview"
-        app:apsv_rounded="false"
-        app:apsv_shadow_angle="90"
-        app:apsv_shadow_color="#000"
-        app:apsv_shadow_distance="5dp"
-        app:apsv_shadow_radius="5dp"
-        app:apsv_shadowed="true"
-        app:apsv_start_angle="270"
-        app:apsv_sweep_angle="360"
-        app:apsv_text_color="#fff"
-        android:layout_gravity="center"
-        app:apsv_typeface="fonts/agency.ttf"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/prof_main_prof3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Популярные технологии"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textColor="@android:color/white"
+            android:textSize="24sp"/>
+
+        <devlight.io.library.ArcProgressStackView
+            android:id="@+id/apsv"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            app:apsv_animated="true"
+            app:apsv_animation_duration="1000"
+            app:apsv_dragged="false"
+            app:apsv_draw_width="75%"
+            app:apsv_indicator_orientation="vertical"
+            app:apsv_interpolator="@android:anim/bounce_interpolator"
+            app:apsv_leveled="false"
+            app:apsv_model_bg_enabled="true"
+            app:apsv_model_offset="0dp"
+            app:apsv_preview_bg="#ccc"
+            app:apsv_preview_colors="@array/default_preview"
+            app:apsv_rounded="false"
+            app:apsv_shadow_angle="90"
+            app:apsv_shadow_color="#000"
+            app:apsv_shadow_distance="5dp"
+            app:apsv_shadow_radius="5dp"
+            app:apsv_shadowed="false"
+            app:apsv_start_angle="270"
+            app:apsv_sweep_angle="360"
+            app:apsv_text_color="#fff"
+            app:apsv_typeface="fonts/agency.ttf"/>
+
+        <ListView
+            android:id="@+id/stack_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 </LinearLayout>

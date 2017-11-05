@@ -80,7 +80,7 @@ public class Splash extends Activity {
                             while(in.hasNext())
                                 s += in.nextLine();
                             in.close();
-                            Log.i("code", "textfromfire: "+s);
+                            //Log.i("code", "textfromfire: "+s);
                             int begskill=0, begcount = 0;
                             for(int j=0; j<s.length(); j++){
                                 if(s.charAt(j)==':'){
@@ -88,6 +88,7 @@ public class Splash extends Activity {
                                 }
                                 if(s.charAt(j)==','){
                                     String skill = s.substring(begskill, begcount-1);
+                                    Log.i("code", skill);
                                     int count = Integer.parseInt(s.substring(begcount, j));
                                     MainApplication.getInstance().mainRealm.beginTransaction();
                                     RealSkill realSkill = MainApplication.getInstance().mainRealm.createObject(RealSkill.class);
@@ -95,6 +96,7 @@ public class Splash extends Activity {
                                     realSkill.setCount(count);
                                     realSkill.setSkill(skill);
                                     MainApplication.getInstance().mainRealm.commitTransaction();
+                                    begskill=j+1;
                                 }
                             }
                             if(finalI==namesFiles.length-1){

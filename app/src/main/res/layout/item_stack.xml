@@ -44,8 +44,9 @@
         </LinearLayout>
     </LinearLayout>
     <devlight.io.library.ArcProgressStackView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:id="@+id/apsv"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:apsv_animated="true"
         app:apsv_animation_duration="1000"
         app:apsv_dragged="true"
@@ -54,14 +55,14 @@
         app:apsv_interpolator="@android:anim/bounce_interpolator"
         app:apsv_leveled="true"
         app:apsv_model_bg_enabled="true"
-        app:apsv_model_offset="5dp"
+        app:apsv_model_offset="0dp"
         app:apsv_preview_bg="#ccc"
         app:apsv_preview_colors="@array/default_preview"
         app:apsv_rounded="false"
         app:apsv_shadow_angle="90"
         app:apsv_shadow_color="#000"
         app:apsv_shadow_distance="5dp"
-        app:apsv_shadow_radius="10dp"
+        app:apsv_shadow_radius="5dp"
         app:apsv_shadowed="true"
         app:apsv_start_angle="270"
         app:apsv_sweep_angle="360"

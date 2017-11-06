@@ -67,5 +67,7 @@
         <item>objective-c</item>
         <item>scala</item>
         <item>go</item>
+        <item>kotlin</item>
+
     </string-array>
 </resources>

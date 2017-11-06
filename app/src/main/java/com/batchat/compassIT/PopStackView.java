@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.batchat.compassIT.Realm.RealSkill;
 
@@ -20,6 +21,7 @@ import devlight.io.library.ArcProgressStackView;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+import static com.batchat.compassIT.MainActivity.mainProf;
 import static com.batchat.compassIT.MainActivity.profarea;
 
 /**
@@ -30,13 +32,15 @@ class PopStackView {
     private static final int MODEL_COUNT = 5;
     private int[] mStartColors = new int[MODEL_COUNT];
     final ArrayList<ArcProgressStackView.Model> models = new ArrayList<>();
-
+    final ArrayList<ArcProgressStackView.Model> modelslang = new ArrayList<>();
     private final Realm mRealm = MainApplication.getInstance().mainRealm;
     ArrayList<RealSkill> topLang = new ArrayList<RealSkill>();
     ArrayList<RealSkill> topSkill = new ArrayList<RealSkill>();
 
     public PopStackView(View view) {
         final String[] bgColors = view.getResources().getStringArray(R.array.medical_express);
+        TextView mainProfText = (TextView) view.findViewById(R.id.prof_main_prof);
+        mainProfText.setText(mainProf);
         topLang.clear();
         topSkill.clear();
         final String[] startColors = view.getResources().getStringArray(R.array.default_preview);
@@ -71,27 +75,57 @@ class PopStackView {
             }
         });*/
         int allcount = 0;
+        int allcountlang = 0;
         Collections.sort(topSkill, new MyComparator());
-        String[] names = new String[5];
+        Collections.sort(topLang, new MyComparator());
+        TextView list = (TextView) view.findViewById(R.id.text_list);
+        TextView listlang = (TextView) view.findViewById(R.id.text_list_lang);
+        String names = "";
+        String langs = "";
         for(int i=0; i<5; i++){
             int ip = i+1;
-            names[i]="#"+ip+" "+topSkill.get(i).getSkill();
+            names+="#"+ip+" "+topSkill.get(i).getSkill()+"\n";
             allcount += topSkill.get(i).getCount();
             Log.i("code", topSkill.get(i).getSkill());
         }
+        for(int i=0; i<5&&i<topLang.size(); i++) {
+            int ip = i + 1;
+            langs += "#" + ip + " " + topLang.get(i).getSkill()+"\n";
+            allcountlang += topLang.get(i).getCount();
+        }
+        list.setText(names);
+        listlang.setText(langs);
         for(int i=0; i<5; i++){
             RealSkill top5 = topSkill.get(i);
             Log.i("code", "top"+i+" "+top5.getSkill()+" "+top5.getCount());
             models.add(new ArcProgressStackView.Model(top5.getSkill(), top5.getCount()*100/allcount, Color.parseColor(bgColors[i]), mStartColors[i]));
         }
+        for(int i=0; i<5&&i<topLang.size(); i++){
+            RealSkill top5lang = topLang.get(i);
+            modelslang.add(new ArcProgressStackView.Model(top5lang.getSkill(), top5lang.getCount()*100/allcountlang, Color.parseColor(bgColors[i]), mStartColors[i]));
+        }
         Log.i("code", models.size()+"");
         final ArcProgressStackView arcProgressStackView = (ArcProgressStackView) view.findViewById(R.id.apsv);
+        final ArcProgressStackView arcProgressStackViewLang = (ArcProgressStackView) view.findViewById(R.id.apsvlang);
+        if(profarea.equals("android")||profarea.equals("backend")||profarea.equals("game")||profarea.equals("data")||profarea.equals("ios")){
+
+        }
         arcProgressStackView.setModels(models);
-        ListView listStack = (ListView) view.findViewById(R.id.stack_list);
+        arcProgressStackViewLang.setModels(modelslang);
+
+
+        /*ListView listStack = (ListView) view.findViewById(R.id.stack_list);
+        ListView listStackLang = (ListView) view.findViewById(R.id.stack_listlang);
+
         // создаем адаптер
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(), R.layout.my_item, names);
+        ArrayAdapter<String> adapterlang = new ArrayAdapter<String>(view.getContext(), R.layout.my_item, langs);
+
         // присваиваем адаптер списку
         listStack.setAdapter(adapter);
+        listStackLang.setAdapter(adapterlang);*/
+        Log.i("code", models.size()+"");
+        Log.i("code", modelslang.size()+"");
     }
     class MyComparator implements Comparator<RealSkill> {
         @Override
